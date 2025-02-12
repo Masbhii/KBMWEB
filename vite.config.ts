@@ -6,15 +6,14 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  publicDir: 'public',
+  publicDir: 'public', // Pastikan folder public di-root
   plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@components': path.resolve(__dirname, './src/components'),
-      '@assets': path.resolve(__dirname, './public')
+      '@assets': path.resolve(__dirname, './public') // Pastikan path alias benar
     }
   },
   server: {
