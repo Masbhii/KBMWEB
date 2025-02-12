@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React from 'react';
 import Navbar from "../layout/navbar";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SiInstagram, SiTiktok } from "react-icons/si";

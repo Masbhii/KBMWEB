@@ -7,13 +7,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  publicDir: 'public', // Pastikan folder public di-root
+  publicDir: 'public',
   plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@components': path.resolve(__dirname, './src/components'),
-      '@assets': path.resolve(__dirname, './public') // Pastikan path alias benar
+      '@assets': path.resolve(__dirname, './public')
     }
   },
   server: {
