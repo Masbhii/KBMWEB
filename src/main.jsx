@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Home from './pages/Home.jsx'; // Pastikan path benar
+import Home from './components/pages/Home.jsx';
 import './index.css'; // Pastikan file CSS ada
 
 console.log('Starting app...');
