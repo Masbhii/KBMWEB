@@ -1,5 +1,46 @@
 // Navbar scroll indicator
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile navbar behavior
+    const navbar = document.getElementById('navbar');
+    const navContainer = navbar.querySelector('.nav-container');
+    let lastScrollTop = 0;
+    let scrollTimeout;
+
+    // Handle scroll behavior
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (window.innerWidth <= 768) { // Only for mobile devices
+            window.clearTimeout(scrollTimeout);
+
+            // Remove menu-open class while scrolling
+            navbar.classList.remove('menu-open');
+
+            scrollTimeout = setTimeout(() => {
+                if (currentScroll > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                lastScrollTop = currentScroll;
+            }, 100);
+        }
+    });
+
+    // Handle click behavior
+    navContainer.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && navbar.classList.contains('scrolled')) {
+            navbar.classList.toggle('menu-open');
+            e.stopPropagation(); // Prevent body click from immediately closing
+        }
+    });
+
+    // Close menu when clicking outside
+    document.body.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            navbar.classList.remove('menu-open');
+        }
+    });
+
     const sections = document.querySelectorAll('section[id]');
     const navButtons = document.querySelectorAll('.nav-links button');
 
@@ -23,6 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.classList.add('active');
             }
         });
+    }
+
+    // Ensure gallery section is properly observed on mobile
+    const gallerySection = document.getElementById('gallery');
+    if (gallerySection) {
+        const galleryObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    updateActiveButton('gallery');
+                }
+            });
+        }, { threshold: 0.3 });
+        galleryObserver.observe(gallerySection);
     }
 
     // Smooth scroll to section
