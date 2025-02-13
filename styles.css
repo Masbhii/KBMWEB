@@ -10,8 +10,8 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: Lora, serif;
+    line-height: 1;
     overflow-x: hidden;
 }
 
@@ -73,42 +73,61 @@ body {
 
 /* Home Section */
 #home {
-    height: 100vh;
     position: relative;
+    height: 100vh; /* Mengisi tinggi layar penuh */
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    text-align: center;
 }
 
+/* Video background */
 #bg-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    object-fit: cover; /* Memastikan video menutupi seluruh area */
+    z-index: -1; /* Menempatkan video di belakang konten */
 }
 
+/* Home content */
 .home-content {
-    z-index: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Menempatkan konten di atas video */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
-.logo {
-    max-width: 300px;
-    margin-bottom: 2rem;
+/* Logo */
+.home-content .logo {
+    max-width: 400px; /* Sesuaikan ukuran logo */
+    margin-bottom: 20px; /* Jarak antara logo dan teks */
+    animation: popup 1s ease-in-out; /* Efek animasi */
 }
 
-.animate-popup {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: popup 1s ease forwards;
+/* Tagline */
+.home-content .tagline {
+    position: absolute;
+    bottom: 20px; /* Menempatkan teks di dekat bagian bawah */
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek bayangan teks */
+    animation: popup 1.5s ease-in-out; /* Efek animasi */
 }
 
+/* Animasi popup */
 @keyframes popup {
-    to {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
