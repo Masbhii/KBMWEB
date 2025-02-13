@@ -1,14 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kita Bikin Memories</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root">Loading...</div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <button data-section="home">Home</button>
+                <button data-section="about">About</button>
+                <button data-section="gallery">Gallery</button>
+                <button data-section="review">Review</button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <video autoplay muted loop id="bg-video">
+            <source src="public/gif.mp4" type="video/mp4">
+        </video>
+        <div class="home-content">
+            <img src="public/logo.png" alt="Logo" class="logo animate-popup">
+            <p class="tagline animate-popup">Hari ini, untuk selamanya.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h1>Kita Bikin Memories</h1>
+                <p>Lorem Ipsum Dolor Sit Amet</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="about-image">
+                <img src="public/profile.png" alt="Profile">
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h1>Gallery</h1>
+        <div class="gallery-grid">
+            <a href="public/weddings.html" class="gallery-item">
+                <img src="public/wedding.png" alt="Wedding">
+                <div class="overlay">
+                    <span>Wedding</span>
+                </div>
+            </a>
+            <a href="public/family.html" class="gallery-item">
+                <img src="public/family.png" alt="Family">
+                <div class="overlay">
+                    <span>Family</span>
+                </div>
+            </a>
+            <a href="public/event.html" class="gallery-item">
+                <img src="public/event.png" alt="Event">
+                <div class="overlay">
+                    <span>Event</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="review">
+        <h1>Clients Review</h1>
+        <div class="review-container">
+            <button class="nav-btn prev-btn">&lt;</button>
+            <div class="review-slider">
+                <div class="review-slide">
+                    <img src="public/client1.png" alt="Client 1">
+                    <blockquote>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"</blockquote>
+                    <p class="client-name">John & Laura</p>
+                </div>
+                <div class="review-slide">
+                    <img src="public/client2.png" alt="Client 2">
+                    <blockquote>"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</blockquote>
+                    <p class="client-name">Mike & Sarah</p>
+                </div>
+                <div class="review-slide">
+                    <img src="public/client3.png" alt="Client 3">
+                    <blockquote>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</blockquote>
+                    <p class="client-name">David & Emma</p>
+                </div>
+            </div>
+            <button class="nav-btn next-btn">&gt;</button>
+        </div>
+    </section>
+
+    <footer>
+        <img src="public/logof.png" alt="Footer Logo" class="footer-logo">
+        <p>Mengabadikan momen berharga dalam hidupmu dengan sentuhan profesional.</p>
+        <div class="social-links">
+            <a href="#" class="social-icon">
+                <img src="public/instagram.png" alt="Instagram">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="public/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="public/tiktok.png" alt="TikTok">
+            </a>
+            <a href="#" class="social-icon">
+                <img src="public/email.png" alt="Email">
+            </a>
+        </div>
+        <p class="copyright">© 2025 Kita Bikin Memories. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
