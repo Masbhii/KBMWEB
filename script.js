@@ -107,41 +107,106 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     let currentSlide = 0;
+    let isAnimating = false;
 
     // Show initial slide
     showSlide(currentSlide);
 
     // Previous button click
     prevBtn.addEventListener('click', () => {
+        if (isAnimating) return;
         currentSlide--;
         if (currentSlide < 0) {
             currentSlide = slides.length - 1;
         }
-        showSlide(currentSlide);
+        changeSlide('prev');
     });
 
     // Next button click
     nextBtn.addEventListener('click', () => {
+        if (isAnimating) return;
         currentSlide++;
         if (currentSlide >= slides.length) {
             currentSlide = 0;
         }
-        showSlide(currentSlide);
+        changeSlide('next');
     });
+
+    function changeSlide(direction) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        const currentActive = document.querySelector('.review-slide.active');
+        const nextSlide = slides[currentSlide];
+
+        // Set initial positions
+        if (direction === 'next') {
+            nextSlide.style.transform = 'translateX(100%)';
+            currentActive.style.transform = 'translateX(0)';
+        } else {
+            nextSlide.style.transform = 'translateX(-100%)';
+            currentActive.style.transform = 'translateX(0)';
+        }
+
+        // Make next slide visible
+        nextSlide.style.display = 'block';
+        nextSlide.style.opacity = '0';
+
+        // Trigger animation
+        requestAnimationFrame(() => {
+            currentActive.style.opacity = '0';
+            nextSlide.style.opacity = '1';
+            
+            if (direction === 'next') {
+                currentActive.style.transform = 'translateX(-100%)';
+                nextSlide.style.transform = 'translateX(0)';
+            } else {
+                currentActive.style.transform = 'translateX(100%)';
+                nextSlide.style.transform = 'translateX(0)';
+            }
+
+            currentActive.classList.remove('active');
+            nextSlide.classList.add('active');
+
+            // Reset after animation
+            setTimeout(() => {
+                currentActive.style.display = 'none';
+                currentActive.style.transform = '';
+                nextSlide.style.transform = '';
+                isAnimating = false;
+            }, 800);
+        });
+    }
 
     function showSlide(index) {
         slides.forEach(slide => {
             slide.classList.remove('active');
+            slide.style.display = 'none';
         });
         slides[index].classList.add('active');
+        slides[index].style.display = 'block';
     }
 
     // Auto advance slides every 5 seconds
-    setInterval(() => {
-        currentSlide++;
-        if (currentSlide >= slides.length) {
-            currentSlide = 0;
+    let autoSlideInterval = setInterval(autoAdvance, 5000);
+
+    function autoAdvance() {
+        if (!isAnimating) {
+            currentSlide++;
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            changeSlide('next');
         }
-        showSlide(currentSlide);
-    }, 5000);
+    }
+
+    // Pause auto-advance on hover
+    const reviewContainer = document.querySelector('.review-container');
+    reviewContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+    });
+
+    reviewContainer.addEventListener('mouseleave', () => {
+        autoSlideInterval = setInterval(autoAdvance, 5000);
+    });
 });

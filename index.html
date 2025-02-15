@@ -6,6 +6,7 @@
     <title>Kita Bikin Memories</title>
     <link rel="icon" type="image/x-icon" href="public/favicon.ico">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.cdnfonts.com/css/vogue" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -48,21 +49,21 @@
     </section>
 
     <section id="gallery">
-        <h1>Gallery</h1>
+        <h1>GALLERY</h1>
         <div class="gallery-grid">
-            <a href="public/weddings.html" class="gallery-item">
+            <a href="wed/weddings.html" class="gallery-item">
                 <img src="public/wedding.png" alt="Wedding">
                 <div class="overlay">
                     <span>Wedding</span>
                 </div>
             </a>
-            <a href="public/family.html" class="gallery-item">
+            <a href="fam/family.html" class="gallery-item">
                 <img src="public/family.png" alt="Family">
                 <div class="overlay">
                     <span>Family</span>
                 </div>
             </a>
-            <a href="public/event.html" class="gallery-item">
+            <a href="eve/event.html" class="gallery-item">
                 <img src="public/event.png" alt="Event">
                 <div class="overlay">
                     <span>Event</span>
@@ -74,30 +75,46 @@
     <section id="review">
         <h1>Clients Review</h1>
         <div class="review-container">
-            <button class="nav-btn prev-btn">&lt;</button>
+            <button class="nav-btn prev-btn" aria-label="Previous">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
             <div class="review-slider">
                 <div class="review-slide">
                     <img src="public/client1.png" alt="Client 1">
-                    <blockquote>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"</blockquote>
-                    <p class="client-name">John & Laura</p>
+                    <div class="review-content">
+                        <blockquote>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"</blockquote>
+                        <p class="client-name">John & Laura</p>
+                    </div>
                 </div>
                 <div class="review-slide">
                     <img src="public/client2.png" alt="Client 2">
-                    <blockquote>"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</blockquote>
-                    <p class="client-name">Mike & Sarah</p>
+                    <div class="review-content">
+                        <blockquote>"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</blockquote>
+                        <p class="client-name">Mike & Sarah</p>
+                    </div>
                 </div>
                 <div class="review-slide">
                     <img src="public/client3.png" alt="Client 3">
-                    <blockquote>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</blockquote>
-                    <p class="client-name">David & Emma</p>
+                    <div class="review-content">
+                        <blockquote>"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</blockquote>
+                        <p class="client-name">David & Emma</p>
+                    </div>
                 </div>
             </div>
-            <button class="nav-btn next-btn">&gt;</button>
+            <button class="nav-btn next-btn" aria-label="Next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </section>
         </div>
     </section>
 
     <footer>
-        <img src="public/logof.png" alt="Footer Logo" class="footer-logo">
+        <img src="public/logo.png" alt="Footer Logo" class="footer-logo">
         <p>Mengabadikan momen berharga dalam hidupmu dengan sentuhan profesional.</p>
         <div class="social-links">
             <a href="https://www.instagram.com/kitabikinmemories" class="social-icon" target="_blank">

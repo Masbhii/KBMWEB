@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding - Kita Bikin Memories</title>
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+    <link href="https://fonts.cdnfonts.com/css/vogue" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="wed.css">
+    <style>
+        body { font-family: 'Vogue', serif; }
+        .back-btn:hover { transform: translateX(-5px); }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Back Navigation Button -->
+        <button onclick="window.history.back()" 
+            class="back-btn mb-6 w-12 h-12 text-white rounded-full flex items-center justify-center transition shadow-lg"
+            style="background-color: var(--btn-bg, #091d2b);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <!-- Header -->
+        <div class="header">
+            <h1 class="text-4xl font-serif mb-8">Wedding Gallery</h1>
+            <p>Click on any image to view it in full size.</p>
+        </div>
+        
+        <!-- Photo Grid -->
+        <div class="row"> 
+            <div class="column">
+                <img src="../public/wed/wed1.png" alt="Wedding Photo 1" class="gallery-img">
+                <img src="../public/wed/wed2.png" alt="Wedding Photo 2" class="gallery-img">
+                <img src="../public/wed/wed3.png" alt="Wedding Photo 3" class="gallery-img">
+                <img src="../public/wed/wed4.png" alt="Wedding Photo 4" class="gallery-img">
+                <img src="../public/wed/wed5.png" alt="Wedding Photo 5" class="gallery-img">
+                <img src="../public/wed/wed6.png" alt="Wedding Photo 6" class="gallery-img">
+            </div>
+            <div class="column">
+                <img src="../public/wed/wed6.png" alt="Wedding Photo 7" class="gallery-img">
+                <img src="../public/wed/wed5.png" alt="Wedding Photo 8" class="gallery-img">
+                <img src="../public/wed/wed4.png" alt="Wedding Photo 9" class="gallery-img">
+                <img src="../public/wed/wed3.png" alt="Wedding Photo 10" class="gallery-img">
+                <img src="../public/wed/wed2.png" alt="Wedding Photo 11" class="gallery-img">
+                <img src="../public/wed/wed1.png" alt="Wedding Photo 12" class="gallery-img">
+            </div>  
+            <div class="column">
+                <img src="../public/wed/wed1.png" alt="Wedding Photo 13" class="gallery-img">
+                <img src="../public/wed/wed2.png" alt="Wedding Photo 14" class="gallery-img">
+                <img src="../public/wed/wed3.png" alt="Wedding Photo 15" class="gallery-img">
+                <img src="../public/wed/wed4.png" alt="Wedding Photo 16" class="gallery-img">
+                <img src="../public/wed/wed5.png" alt="Wedding Photo 17" class="gallery-img">
+                <img src="../public/wed/wed6.png" alt="Wedding Photo 18" class="gallery-img">
+            </div>
+            <div class="column">
+                <img src="../public/wed/wed6.png" alt="Wedding Photo 19" class="gallery-img">
+                <img src="../public/wed/wed5.png" alt="Wedding Photo 20" class="gallery-img">
+                <img src="../public/wed/wed4.png" alt="Wedding Photo 21" class="gallery-img">
+                <img src="../public/wed/wed3.png" alt="Wedding Photo 22" class="gallery-img">
+                <img src="../public/wed/wed2.png" alt="Wedding Photo 23" class="gallery-img">
+                <img src="../public/wed/wed1.png" alt="Wedding Photo 24" class="gallery-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="imageCaption"></div>
+    </div>
+
+    <script src="wed.js"></script>
+</body>
+</html>
