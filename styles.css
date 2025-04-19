@@ -10,9 +10,53 @@ html {
 }
 
 body {
-    font-family: Vogue, serif;
-    line-height: 1;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#cursorContainer {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Menghindari scroll tambahan */
+    pointer-events: none;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+/* Font untuk halaman Home */
+body.home {
+    font-family: 'Vogue', serif;
+}
+
+/* Font untuk halaman About */
+body.about {
+    font-family: 'Merriweather', serif;
+}
+
+/* Font untuk halaman Gallery */
+body.gallery {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Font untuk halaman Review */
+body.review {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Font untuk teks copyright di Footer */
+footer .copyright {
+    font-family: 'Courier New', monospace; /* Font monospace untuk copyright */
+    font-size: 12px;
+    color: #ccc; /* Warna yang lebih soft */
+    margin-top: 1rem;
 }
 
 /* Navbar Styles */
@@ -228,6 +272,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
 /* Video background */
@@ -539,10 +584,12 @@ blockquote {
 
 /* Footer */
 footer {
+    margin-top: auto;
     background-color: #800000;
     color: white;
     padding: 4rem 2rem;
     text-align: center;
+    width: 100%;
 }
 
 .footer-logo {
